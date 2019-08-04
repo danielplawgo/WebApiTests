@@ -1,0 +1,825 @@
+{
+	"info": {
+		"_postman_id": "e94f73c9-3cca-4512-8b6a-7956322abe50",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WebApiTests Demo",
+			"item": [
+				{
+					"name": "Dev",
+					"item": [
+						{
+							"name": "Products",
+							"item": [
+								{
+									"name": "Get Products",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "ccd65551-057a-4efb-a614-6c007ddcc72e",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4f9f2c82-e2af-4e2f-bbb6-cadcdb3d1799",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "18af7e99-4c09-4040-862c-f9f2c907f316",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json; charset=utf-8"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Name\": \"Test product\"\n}"
+										},
+										"url": {
+											"raw": "{{url}}/api/products",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4f9f2c82-e2af-4e2f-bbb6-cadcdb3d1799",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "18af7e99-4c09-4040-862c-f9f2c907f316",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json; charset=utf-8"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Name\": \"Updated Test product\"\n}"
+										},
+										"url": {
+											"raw": "{{url}}/api/products/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Automatic",
+					"item": [
+						{
+							"name": "Products",
+							"item": [
+								{
+									"name": "Reset Test Data",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/debug/resettestdata/product",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"debug",
+												"resettestdata",
+												"product"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Products",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "ccd65551-057a-4efb-a614-6c007ddcc72e",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body is correct\", function () {\r",
+													"    pm.response.to.have.body('{\"Value\":[{\"Id\":1,\"Name\":\"Name1\"},{\"Id\":2,\"Name\":\"Name2\"},{\"Id\":3,\"Name\":\"Name3\"},{\"Id\":4,\"Name\":\"Name4\"},{\"Id\":5,\"Name\":\"Name5\"}],\"Success\":true,\"Errors\":[]}');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Return added product data\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Success).to.eql(true);\r",
+													"    pm.expect(jsonData.Value.Id).to.eql(1);\r",
+													"    pm.expect(jsonData.Value.Name).to.eql(\"Name1\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Return added product data\", function () {\r",
+													"    pm.response.to.have.body('{\"Value\":{\"Id\":1,\"Name\":\"Name1\"},\"Success\":true,\"Errors\":[]}');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By Id - doesnt exist",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body has error\", function () {\r",
+													"    pm.response.to.have.body('{\"Value\":null,\"Success\":false,\"Errors\":[{\"PropertyName\":\"\",\"Message\":\"Product with id -1 doesn\\'t exist.\"}]}');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products/-1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"-1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4f9f2c82-e2af-4e2f-bbb6-cadcdb3d1799",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Return added product data\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Value.Name).to.eql(\"Test product\");\r",
+													"    \r",
+													"    pm.environment.set(\"productId\", jsonData.Value.Id);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "18af7e99-4c09-4040-862c-f9f2c907f316",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json; charset=utf-8"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Name\": \"Test product\"\n}"
+										},
+										"url": {
+											"raw": "{{url}}/api/products",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By Id - after adding",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Return added product data\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Value.Id).to.eql(6);\r",
+													"    pm.expect(jsonData.Value.Name).to.eql(\"Test product\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products/{{productId}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"{{productId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Products - after adding a new",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "ccd65551-057a-4efb-a614-6c007ddcc72e",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body is correct\", function () {\r",
+													"    pm.response.to.have.body('{\"Value\":[{\"Id\":1,\"Name\":\"Name1\"},{\"Id\":2,\"Name\":\"Name2\"},{\"Id\":3,\"Name\":\"Name3\"},{\"Id\":4,\"Name\":\"Name4\"},{\"Id\":5,\"Name\":\"Name5\"},{\"Id\":6,\"Name\":\"Test product\"}],\"Success\":true,\"Errors\":[]}');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add - validation error",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4f9f2c82-e2af-4e2f-bbb6-cadcdb3d1799",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body has error\", function () {\r",
+													"    pm.response.to.have.body('{\"Value\":null,\"Success\":false,\"Errors\":[{\"PropertyName\":\"Name\",\"Message\":\"Pole \\'Name\\' nie może być puste.\"}]}');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "18af7e99-4c09-4040-862c-f9f2c907f316",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json; charset=utf-8"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Name\": \"\"\n}"
+										},
+										"url": {
+											"raw": "{{url}}/api/products",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4f9f2c82-e2af-4e2f-bbb6-cadcdb3d1799",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Return added product data\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Value.Name).to.eql(\"Updated Test product\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "18af7e99-4c09-4040-862c-f9f2c907f316",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json; charset=utf-8"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Name\": \"Updated Test product\"\n}"
+										},
+										"url": {
+											"raw": "{{url}}/api/products/{{productId}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"{{productId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By Id - after updating Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Return added product data\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.Value.Id).to.eql(6);\r",
+													"    pm.expect(jsonData.Value.Name).to.eql(\"Updated Test product\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products/{{productId}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"{{productId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body is correct\", function () {\r",
+													"    pm.response.to.have.body('{\"Success\":true,\"Errors\":[]}');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products/{{productId}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"{{productId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get By Id - doesnt exist after deleting",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body has error\", function () {\r",
+													"    pm.response.to.have.body('{\"Value\":null,\"Success\":false,\"Errors\":[{\"PropertyName\":\"\",\"Message\":\"Product with id 6 doesn\\'t exist.\"}]}');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products/{{productId}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products",
+												"{{productId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Products - after deleting",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "ccd65551-057a-4efb-a614-6c007ddcc72e",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Body is correct\", function () {\r",
+													"    pm.response.to.have.body('{\"Value\":[{\"Id\":1,\"Name\":\"Name1\"},{\"Id\":2,\"Name\":\"Name2\"},{\"Id\":3,\"Name\":\"Name3\"},{\"Id\":4,\"Name\":\"Name4\"},{\"Id\":5,\"Name\":\"Name5\"}],\"Success\":true,\"Errors\":[]}');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/products",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
