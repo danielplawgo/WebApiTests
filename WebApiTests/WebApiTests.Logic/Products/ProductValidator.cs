@@ -13,7 +13,8 @@ namespace WebApiTests.Logic.Products
         public ProductValidator()
         {
             RuleFor(p => p.Name)
-                .NotEmpty();
+                .NotEmpty()
+                .WithMessage("Name is required");
         }
     }
 }
