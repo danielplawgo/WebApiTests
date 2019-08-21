@@ -41,5 +41,5 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)/Tests'
+    targetPath: '$(Build.Repository.LocalPath)/Tests'
     artifact: 'Tests'
