@@ -6,6 +6,184 @@
 	},
 	"item": [
 		{
+			"name": "Postman Demo",
+			"item": [
+				{
+					"name": "Get Products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ccd65551-057a-4efb-a614-6c007ddcc72e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4f9f2c82-e2af-4e2f-bbb6-cadcdb3d1799",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Return added product data\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.Name).to.eql(\"Test product\");\r",
+									"    pm.expect(jsonData.Category).to.eql(\"Test category\");\r",
+									"    pm.expect(jsonData.Price).to.eql(1000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "18af7e99-4c09-4040-862c-f9f2c907f316",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"Test product\",\n    \"Category\": \"Test category\",\n    \"Price\": 1000\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products After Add",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ccd65551-057a-4efb-a614-6c007ddcc72e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eab13c9f-e612-432a-8e6a-8dc3ad5a621f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "WebApiTests Demo",
 			"item": [
 				{
@@ -543,7 +721,7 @@
 													"});\r",
 													"\r",
 													"pm.test(\"Body has error\", function () {\r",
-													"    pm.response.to.have.body('{\"Value\":null,\"Success\":false,\"Errors\":[{\"PropertyName\":\"Name\",\"Message\":\"Pole \\'Name\\' nie może być puste.\"}]}');\r",
+													"    pm.response.to.have.body('{\"Value\":null,\"Success\":false,\"Errors\":[{\"PropertyName\":\"Name\",\"Message\":\"Name is required\"}]}');\r",
 													"});"
 												],
 												"type": "text/javascript"
