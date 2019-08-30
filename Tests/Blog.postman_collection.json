@@ -415,15 +415,14 @@
 										"method": "POST",
 										"header": [],
 										"url": {
-											"raw": "{{url}}/api/debug/resettestdata/product",
+											"raw": "{{url}}/api/debug/resettestdata",
 											"host": [
 												"{{url}}"
 											],
 											"path": [
 												"api",
 												"debug",
-												"resettestdata",
-												"product"
+												"resettestdata"
 											]
 										}
 									},
