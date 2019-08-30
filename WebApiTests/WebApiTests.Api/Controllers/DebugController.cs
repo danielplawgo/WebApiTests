@@ -5,17 +5,29 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebApiTests.DataAccess;
+using WebApiTests.Logic.Interfaces;
 
 namespace WebApiTests.Api.Controllers
 {
     public class DebugController : ApiController
     {
-        [Route("api/debug/resettestdata/{source}")]
-        public IHttpActionResult ResetTestData(string source)
+        private Lazy<IDatabaseRestoreService> _databaseRestoreService;
+
+        protected IDatabaseRestoreService DatabaseRestoreService => _databaseRestoreService.Value;
+
+        public DebugController(Lazy<IDatabaseRestoreService> databaseRestoreService)
         {
-            if(source == "product")
+            _databaseRestoreService = databaseRestoreService;
+        }
+
+        [Route("api/debug/resettestdata")]
+        public IHttpActionResult ResetTestData()
+        {
+            var result = DatabaseRestoreService.Restore();
+
+            if (result.Success == false)
             {
-                ProductRepository.ResetTestData();
+                return Content(System.Net.HttpStatusCode.BadRequest, result);
             }
 
             return Ok();

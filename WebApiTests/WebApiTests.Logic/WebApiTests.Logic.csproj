@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IDatabaseRestoreService.cs" />
     <Compile Include="Interfaces\ILogic.cs" />
     <Compile Include="Interfaces\IProductLogic.cs" />
     <Compile Include="Products\ProductLogic.cs" />

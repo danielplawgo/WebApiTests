@@ -12,8 +12,14 @@ namespace WebApiTests.Api.App_Start.AutofacModules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(typeof(ProductRepository).Assembly)
+            builder.RegisterType<DataContext>()
+                .InstancePerRequest();
+
+            builder.RegisterAssemblyTypes(typeof(DataContext).Assembly)
                 .AsClosedTypesOf(typeof(IRepository<>))
+                .AsImplementedInterfaces();
+
+            builder.RegisterType<DatabaseRestoreService>()
                 .AsImplementedInterfaces();
         }
     }
