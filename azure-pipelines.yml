@@ -34,11 +34,13 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: CopyFiles@2
+- task: ArchiveFiles@2
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: 'WebApiTests.Migrator\**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/Migrator'
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
 
 - task: VSTest@2
   inputs:
