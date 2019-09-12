@@ -38,7 +38,7 @@ steps:
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
     Contents: 'WebApiTests.Migrator\**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/Migrator'
 
 - task: VSTest@2
   inputs:
