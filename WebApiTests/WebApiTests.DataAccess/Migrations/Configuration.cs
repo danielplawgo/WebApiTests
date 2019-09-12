@@ -5,7 +5,7 @@ namespace WebApiTests.DataAccess.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<WebApiTests.DataAccess.DataContext>
+    public sealed class Configuration : DbMigrationsConfiguration<WebApiTests.DataAccess.DataContext>
     {
         public Configuration()
         {

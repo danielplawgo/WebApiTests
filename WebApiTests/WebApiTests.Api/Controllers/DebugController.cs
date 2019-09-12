@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -23,7 +24,7 @@ namespace WebApiTests.Api.Controllers
         [Route("api/debug/resettestdata")]
         public IHttpActionResult ResetTestData()
         {
-            var result = DatabaseRestoreService.Restore();
+            var result = DatabaseRestoreService.Restore(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
             if (result.Success == false)
             {

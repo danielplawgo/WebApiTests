@@ -8,6 +8,10 @@ namespace WebApiTests.Logic.Interfaces
 {
     public interface IDatabaseRestoreService
     {
-        Result Restore();
+        Result Restore(string connectionString);
+
+        Result CreateSnapshot(string connectionString, string path);
+
+        Result DropSnapshot(string connectionString);
     }
 }
