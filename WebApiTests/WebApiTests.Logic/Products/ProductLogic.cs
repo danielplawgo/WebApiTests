@@ -78,6 +78,11 @@ namespace WebApiTests.Logic.Products
                 throw new ArgumentNullException(nameof(product));
             }
 
+            if(product.Id == 3)
+            {
+                throw new Exception("special product");
+            }
+
             var validationResult = Validator.Validate(product);
 
             if (validationResult.IsValid == false)
